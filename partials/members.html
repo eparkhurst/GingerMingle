@@ -18,6 +18,11 @@
     </div>
   </div>
   <div ng-repeat="member in members|limitTo:50" class="members-list">
-    <h3>{{member.names.firstName}}  {{member.names.lastName}}</h3>
+    <div class="image">
+      <img src="{{member.avatar}}" alt="" />
+    </div>
+    <div class="text">
+      <h3>{{member.names.firstName}}  {{member.names.lastName}}</h3>
+    </div>
   </div>
 </div>

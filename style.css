@@ -75,7 +75,7 @@ main{
 /*-------------------Members----------------------------*/
 .left-side{
   background-color: grey;
-  width:30vw;
+  width:40vw;
 }
 .top-search{
   display: flex;
@@ -88,4 +88,9 @@ main{
 }
 .searchItem h5{
   margin: 20px 0;
+}
+.members-list{
+  display: flex;
+  flex-direction: row;
+  margin-top: 2vh;
 }
