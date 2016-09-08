@@ -1,5 +1,4 @@
 app.service('Authorization', function($state) {
-
   this.authorized = false;
   this.memorizedState = null;
 
@@ -22,3 +21,18 @@ app.service('Authorization', function($state) {
     go: go
   };
 });
+
+app.factory('Members', function($http){
+  return{
+    getMembers:function(){
+      return $http.get('http://galvanize-student-apis.herokuapp.com/gdating/members').then(function(data){
+        this.allMembers = data.data.data
+        console.log(this.allMembers);
+        return data
+      },function error(data){
+        console.log("an error occurred",data);
+      })
+    },
+    allMembers:[]
+  }
+})

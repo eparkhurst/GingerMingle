@@ -1,3 +1,23 @@
 <main-nav></main-nav>
-<h1>Members Page</h1>
-<h2>This Page Should Be Protected</h2>
+<div class="left-side">
+  <div class="top-search">
+    <div class="searchItem">
+      <h5>All</h5>
+    </div>
+    <div class="searchItem">
+      <h5>Popular</h5>
+    </div>
+    <div class="searchItem">
+      <h5>Near Me</h5>
+    </div>
+    <div class="searchItem">
+      <h5>My Matches</h5>
+    </div>
+    <div class="searchItem">
+      <h5>Chatting</h5>
+    </div>
+  </div>
+  <div ng-repeat="member in members|limitTo:50" class="members-list">
+    <h3>{{member.names.firstName}}  {{member.names.lastName}}</h3>
+  </div>
+</div>

@@ -30,10 +30,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/home')
 
-}).run(function( $rootScope, $state, Authorization) {
+}).run(function( $rootScope, $state, Authorization,Members) {
   if(localStorage.token){
       Authorization.authorized = true;
   }
+
   $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
     if (!Authorization.authorized && toState.data) {
       $state.go(toState.data.redirectTo);

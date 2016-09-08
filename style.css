@@ -72,3 +72,20 @@ main{
 .register-box h1{
   font-size: 2.5em;
 }
+/*-------------------Members----------------------------*/
+.left-side{
+  background-color: grey;
+  width:30vw;
+}
+.top-search{
+  display: flex;
+  flex-direction: row;
+}
+.searchItem{
+  border-left: 1px solid black;
+  padding: 2px;
+  color: blue;
+}
+.searchItem h5{
+  margin: 20px 0;
+}
