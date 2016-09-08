@@ -1,0 +1,25 @@
+<landing-nav></landing-nav>
+<h3 ng-show="showLoading">Loading...</h3>
+<div class="register-box">
+  <h1>Register</h1>
+  <form ng-model="signUpForm">
+    <label for="userName">username</label>
+    <input ng-model="signUpForm.username" type="text" name="userName" value="">
+    <label for="password">password</label>
+    <input ng-model="signUpForm.password" type="password" name="password" value="">
+    <label for="email">email</label>
+    <input ng-model="signUpForm.email" type="email" name="email" value="">
+    <label for="dob">date of birth</label>
+    <input ng-model="signUpForm.dob" type="date" name="dob" value="">
+    <label for="gender">Gender</label>
+    <input ng-model="signUpForm.gender" type="radio" name="gender" value="0">male
+    <input ng-model="signUpForm.gender" type="radio" name="gender" value="1">female
+    <h5>name</h5>
+    <label for="firstname">First Name</label>
+    <input ng-model="signUpForm.names.firstName" type="text" name="firstname" value="">
+    <label for="lastname">Last Name</label>
+    <input ng-model="signUpForm.names.lastName" type="text" name="lastname" value="">
+
+    <input type="button" ng-click="submitSignUp()" name="submit" value="Create An Account">
+  </form>
+</div>

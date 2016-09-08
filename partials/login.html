@@ -1,0 +1,11 @@
+<landing-nav></landing-nav>
+<div class="register-box">
+  <h1>Login</h1>
+  <form ng-model="loginForm" >
+    <label for="email">email</label>
+    <input ng-model="loginForm.email" type="email" name="userName" value="">
+    <label for="password">password</label>
+    <input ng-model="loginForm.password" type="password" name="password" value="">
+    <input type="button" ng-click="login()" value="Log In">
+  </form>
+</div>

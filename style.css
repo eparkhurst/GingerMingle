@@ -1,0 +1,74 @@
+body{
+  background-color: lightblue;
+  margin: 0;
+  font-family: sans-serif;
+}
+header, footer{
+  width:100vw;
+  background-color: black;
+  color: white;
+}
+header{
+  padding: 3vh 0;
+}
+header h3{
+  margin:0;
+}
+footer{
+  position: fixed;
+  left:0px;
+  bottom:0px;
+}
+
+.login-nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.login-nav a{
+  color: white;
+  text-decoration: none;
+}
+.nav-button{
+  display: inline;
+}
+.login-nav-buttons{
+  margin-right: 50px;
+}
+.register{
+  border-left: 2px solid white;
+  padding-left: 3px;
+}
+main{
+
+}
+.upper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+}
+.lower{
+  display: flex;
+  align-items: center;
+  border-top: 1px solid black;
+  text-align: center;
+  height: 300px;
+}
+.person{
+  background-color: grey;
+  height: 20vh;
+  width: 70vw;
+  margin: auto;
+}
+/*--------------------------REGISTER---------------------------*/
+.register-box{
+  width: 50vw;
+  background-color: grey;
+  margin: auto;
+  margin-top: 20vh;
+}
+
+.register-box h1{
+  font-size: 2.5em;
+}
