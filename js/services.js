@@ -33,6 +33,7 @@ app.factory('Members', function($http){
         console.log("an error occurred",data);
       })
     },
-    allMembers:[]
+    allMembers:[],
+    currentMember:{}
   }
 })

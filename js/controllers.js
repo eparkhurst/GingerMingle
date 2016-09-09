@@ -17,7 +17,7 @@ app.controller('HomeController', function($scope){
 })
 
 
-app.controller('SignUpController', function($scope, $http){
+app.controller('SignUpController', function($scope, Authorization, Members){
   $scope.showLoading = false;
   $scope.submitSignUp = function(){
     $scope.showLoading = true
@@ -44,6 +44,7 @@ app.controller('SignUpController', function($scope, $http){
         sessionStorage.setItem('token', data.data.data.token)
         console.log("Session Storage?!?");
         console.log(sessionStorage.token);
+        Members.currentMember = data.data.data
         Authorization.go('members')
       }
       console.log("What did we get back?");
@@ -63,9 +64,7 @@ app.controller('LogInController', function($scope, $http, Authorization,Members)
     .then(function(data){
       if(data.data.data.token){
         sessionStorage.setItem('token', data.data.data.token)
-        //Members.get()
-        console.log("Session Storage?!?");
-        console.log(sessionStorage.token);
+        Members.currentMember = data.data
         Authorization.go('members')
       }
     })
@@ -74,6 +73,8 @@ app.controller('LogInController', function($scope, $http, Authorization,Members)
 
 
 app.controller('MembersController', function($scope, Authorization, Members){
+  console.log(Members.currentMember);
+  $scope.toOrder = ''
   if(Members.allMembers.length == 0){
     Members.getMembers().then(function(data){
       Members.allMembers = data.data.data
@@ -82,7 +83,9 @@ app.controller('MembersController', function($scope, Authorization, Members){
   }else{
     $scope.members = Members.allMembers
   }
-
+  $scope.distance = function(){
+    var location = 
+  }
   $scope.logout = function(){
     sessionStorage.clear()
     Authorization.clear()
