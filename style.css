@@ -88,14 +88,19 @@ img{
 }
 /*--------------------------REGISTER---------------------------*/
 .register-box{
+  padding:10px;
   width: 50vw;
-  background-color: grey;
+  background-color: #ECEFF1;
   margin: auto;
-  margin-top: 20vh;
+  margin-top: 10vh;
+  text-align: center;
 }
 
 .register-box h1{
   font-size: 2.5em;
+}
+.btn-login{
+  margin-top: 10px;
 }
 /*-------------------Members----------------------------*/
 .left-side{
