@@ -1,5 +1,5 @@
 body{
-  background-color: lightblue;
+  background-color: #607D8B;
   margin: 0;
   font-family: sans-serif;
 }
@@ -49,25 +49,42 @@ footer{
 main{
 
 }
+/*------------------------------HOME--------------------------*/
 .upper{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 350px;
+  background-image: url("http://www.allnitegraphics.com/wp-content/uploads/imgs-for-dinner-table-for-two-with-food.jpg");
+  background-size: cover;
+  color:white;
+  position: relative;
+  height: 400px;
+  padding-top: 100px;
+}
+.landing-text{
+  display: inline-block;
+  position: relative;
+  left:50px;
+  text-align: center;
+}
+.land-btn{
+  background-color: #37474F;
 }
 .lower{
   display: flex;
   align-items: center;
   border-top: 1px solid black;
   text-align: center;
-  height: 300px;
+  height: 280px;
 }
-.person{
-  background-color: grey;
-  height: 20vh;
-  width: 70vw;
-  margin: auto;
+
+#slides_control > div{
+  height: 200px;
+}
+img{
+  margin:auto;
+  width: 400px;
+}
+#slides_control {
+  margin:auto;
+  width: 400px;
 }
 /*--------------------------REGISTER---------------------------*/
 .register-box{

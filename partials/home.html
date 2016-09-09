@@ -1,14 +1,23 @@
 <landing-nav></landing-nav>
 <main>
   <div class="upper">
-    <h1>Dating for Nerds</h1>
-    <button class='get-started'type="button" ui-sref="register">Get Started</button>
+    <div class="landing-text">
+      <h5>You don't have to be single</h5>
+      <h1>GingerMingle.com</h1>
+      <button class='btn land-btn'type="button" ui-sref="register">Get Started</button>
+    </div>
   </div>
   <div class="lower">
-    <div class="person">
-      <img src="" alt="" />
-      <div class="text-area">
-
+    <div id="slides_control">
+      <div>
+        <carousel interval="myInterval">
+          <slide ng-repeat="slide in slides" active="slide.active">
+            <img ng-src="{{slide.image}}">
+            <div class="carousel-caption">
+              <h4>Slide {{$index+1}}</h4>
+            </div>
+          </slide>
+        </carousel>
       </div>
     </div>
   </div>

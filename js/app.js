@@ -1,4 +1,4 @@
-var app = angular.module('GingerMingle',['ui.router'])
+var app = angular.module('GingerMingle',['ui.router','ui.bootstrap'])
 console.log("hey");
 
 app.config(function($stateProvider, $urlRouterProvider) {

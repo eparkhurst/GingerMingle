@@ -1,7 +1,22 @@
 app.controller('HomeController', function($scope){
-  console.log('from the Home Controller');
-  $scope.test = "this is a test"
+  $scope.myInterval = 3000;
+    $scope.slides = [
+      {
+        image: 'http://lorempixel.com/400/200/'
+      },
+      {
+        image: 'http://lorempixel.com/400/200/food'
+      },
+      {
+        image: 'http://lorempixel.com/400/200/sports'
+      },
+      {
+        image: 'http://lorempixel.com/400/200/people'
+      }
+    ];
 })
+
+
 app.controller('SignUpController', function($scope, $http){
   $scope.showLoading = false;
   $scope.submitSignUp = function(){
