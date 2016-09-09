@@ -27,12 +27,11 @@ app.factory('Members', function($http){
     getMembers:function(){
       return $http.get('http://galvanize-student-apis.herokuapp.com/gdating/members').then(function(data){
         this.allMembers = data.data.data
-        console.log(this.allMembers);
         return data
       },function error(data){
-        console.log("an error occurred",data);
       })
     },
-    allMembers:[]
+    allMembers:[],
+    currentMember:{}
   }
 })
