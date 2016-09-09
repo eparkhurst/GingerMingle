@@ -39,11 +39,19 @@ footer{
   border-left: 2px solid white;
   padding-left: 3px;
 }
+.get-started{
+  background-color: green;
+  color:white;
+  border: none;
+  width:100px;
+  height: 50px;
+}
 main{
 
 }
 .upper{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 350px;

@@ -26,7 +26,9 @@ app.controller('SignUpController', function($scope, $http){
       $scope.showLoading = false
 
       if(data.data.data.token){
-        localStorage.setItem('token', data.data.data.token)
+        sessionStorage.setItem('token', data.data.data.token)
+        console.log("Session Storage?!?");
+        console.log(sessionStorage.token);
         Authorization.go('members')
       }
       console.log("What did we get back?");
@@ -45,8 +47,10 @@ app.controller('LogInController', function($scope, $http, Authorization,Members)
     $http.post('http://galvanize-student-apis.herokuapp.com/gdating/auth/login', $scope.loginForm)
     .then(function(data){
       if(data.data.data.token){
-        localStorage.setItem('token', data.data.data.token)
+        sessionStorage.setItem('token', data.data.data.token)
         //Members.get()
+        console.log("Session Storage?!?");
+        console.log(sessionStorage.token);
         Authorization.go('members')
       }
     })
@@ -65,7 +69,7 @@ app.controller('MembersController', function($scope, Authorization, Members){
   }
 
   $scope.logout = function(){
-    localStorage.clear()
+    sessionStorage.clear()
     Authorization.clear()
     console.log("all clear");
   }

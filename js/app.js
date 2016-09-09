@@ -31,7 +31,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/home')
 
 }).run(function( $rootScope, $state, Authorization,Members) {
-  if(localStorage.token){
+  if(sessionStorage.token){
       Authorization.authorized = true;
   }
 
