@@ -1,15 +1,15 @@
 app.controller('HomeController', function($scope){
-  $scope.myInterval = 3000;
+  $scope.myInterval = 5000;
     $scope.slides = [
-      {
-        image: 'http://www.peency.com/images/2015/06/04/red-hair-girl.jpg',
-        comment:"I love Ginger Mingle",
-        user:"Hot Girl"
-      },
       {
         image: 'https://scdailymakeover.files.wordpress.com/2012/12/emma_stone_red.jpg',
         comment:"Ginger Mingle is the best place to meet fellow gingers like me",
         user:"Emma Stone"
+      },
+      {
+        image: 'http://www.peency.com/images/2015/06/04/red-hair-girl.jpg',
+        comment:"I love Ginger Mingle",
+        user:"Hot Girl"
       },
       {
         image: 'https://upload.wikimedia.org/wikipedia/commons/8/8a/CarrotTop.jpg',
@@ -80,7 +80,11 @@ app.controller('LogInController', function($scope, $http, Authorization,Members)
 
 
 app.controller('MembersController', function($scope, Authorization, Members){
-  console.log(Members.currentMember);
+  $scope.modal = false;
+  $scope.showMe = function(member){
+    $scope.modal = true;
+    $scope.member = member
+  }
   $scope.toOrder = ''
   if(Members.allMembers.length == 0){
     Members.getMembers().then(function(data){

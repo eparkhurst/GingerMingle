@@ -16,12 +16,14 @@
       <h5>Chatting</h5>
     </div>
   </div>
-  <div ng-repeat="member in members|limitTo:50 | orderBy:toOrder" class="members-list media">
-    <div class="media-left">
-      <img class="media-object member-img" ng-src="{{member.avatar}}" src="public/images/user1.svg" alt="picture of member" />
-    </div>
-    <div class="media-body">
-      <h3>{{member.names.firstName}}  {{member.names.lastName}}</h3>
+  <div class="members-list">
+    <div ng-click="showMe(member)" ng-repeat="member in members|limitTo:50 | orderBy:toOrder" class="media">
+      <div class="media-left">
+        <img class="media-object member-img" ng-src="{{member.avatar}}" src="public/images/user1.svg" alt="picture of member" />
+      </div>
+      <div class="media-body">
+        <h3>{{member.names.firstName}}  {{member.names.lastName}}</h3>
+      </div>
     </div>
   </div>
 </div>

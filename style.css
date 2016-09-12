@@ -121,8 +121,17 @@ main{
 }
 /*-------------------Members----------------------------*/
 .left-side{
+  display: inline-block;
+  vertical-align: top;
   background-color: grey;
   width:40vw;
+  overflow: scroll;
+}
+.right-side{
+  display: inline-block;
+  vertical-align: top;
+  width:59vw;
+  height:87vh;
 }
 .top-search{
   display: flex;
@@ -140,11 +149,38 @@ main{
   margin: 20px 0;
 }
 .members-list{
-  display: flex;
-  flex-direction: row;
+  height:80vh;
+  width:100%;
+  overflow: scroll;
   margin-top: 2vh;
 }
 .member-img{
   width:200px;
   height: 200px;
+}
+.info-box{
+  width: 40vw;
+  height: 40vw;
+  background-color: #CFD8DC;
+  margin:auto;
+  margin-top: 10vh;
+}
+.top{
+  height: 60%;
+}
+.chat{
+  padding-top:5px;
+  text-align: center;
+  position: relative;
+  border-top: 1px solid black;
+  height: 40%;
+}
+.littleImg{
+  margin: 10px;
+  float:left;
+}
+.messenger{
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
 }
