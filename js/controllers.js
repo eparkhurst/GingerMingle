@@ -69,8 +69,7 @@ app.controller('LogInController', function($scope, $http, Authorization,Members)
     .then(function(data){
       if(data.data.data.token){
         sessionStorage.setItem('token', data.data.data.token)
-        sessionStorage.setItem('lat', data.data.data.user.address.geo.lat)
-        sessionStorage.setItem('long', data.data.data.user.address.geo.lng)
+        sessionStorage.setItem('user', JSON.stringify(data.data.data.user))
         Members.currentMember = data.data.data
         Authorization.go('members')
       }
@@ -81,9 +80,10 @@ app.controller('LogInController', function($scope, $http, Authorization,Members)
 
 app.controller('MembersController', function($scope, Authorization, Members){
   $scope.modal = false;
+  $scope.filterMatches = false;
   $scope.showMe = function(member){
     $scope.modal = true;
-    $scope.member = member
+    $scope.member = member;
   }
   $scope.toOrder = ''
   if(Members.allMembers.length == 0){
@@ -104,7 +104,19 @@ app.controller('MembersController', function($scope, Authorization, Members){
     console.log("all clear");
   }
   $scope.like = function(member){
-    
+
+  }
+  $scope.matchFilter = function(val){
+    if($scope.filterMatches){
+      var matches = JSON.parse(sessionStorage.user)._matches
+      for (var i = 0; i < matches.length; i++) {
+        if(matches[i] == val._id){
+          return val
+        }
+      }
+    }else{
+      return val
+    }
   }
 
 })
@@ -113,8 +125,9 @@ app.controller('MembersController', function($scope, Authorization, Members){
 function calcDistance(members, currentMember){
   for (var i = 0; i < members.length; i++) {
     if(members[i].address.geo){
-      var latDiff = Number(members[i].address.geo.lat) - Number(sessionStorage.lat)
-      var lngDiff = Number(members[i].address.geo.lng) - Number(sessionStorage.long)
+      var user= JSON.parse(sessionStorage.user)
+      var latDiff = Number(members[i].address.geo.lat) - Number(user.address.geo.lat)
+      var lngDiff = Number(members[i].address.geo.lng) - Number(user.address.geo.lng)
       var distance = Math.sqrt((latDiff*latDiff)+(lngDiff+lngDiff))
       members[i].distance = distance
     }else{
