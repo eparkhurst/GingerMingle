@@ -78,7 +78,7 @@ main{
 #slides_control > div{
   height: 200px;
 }
-img{
+.slide-img{
   margin:auto;
   width: 400px;
 }
@@ -112,9 +112,12 @@ img{
   flex-direction: row;
 }
 .searchItem{
+  width:20%;
+  text-align: center;
   border-left: 1px solid black;
   padding: 2px;
   color: blue;
+  cursor: pointer;
 }
 .searchItem h5{
   margin: 20px 0;
@@ -123,4 +126,8 @@ img{
   display: flex;
   flex-direction: row;
   margin-top: 2vh;
+}
+.member-img{
+  width:200px;
+  height: 200px;
 }
