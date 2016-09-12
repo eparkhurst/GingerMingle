@@ -75,16 +75,33 @@ main{
   height: 280px;
 }
 
-#slides_control > div{
+/*#slides_control > div{
   height: 200px;
-}
+}*/
 .slide-img{
   margin:auto;
-  width: 400px;
+  height: 200px;
+  max-width: 100%;
 }
 #slides_control {
-  margin:auto;
-  width: 400px;
+  margin:auto ;
+  margin-bottom: 50px;
+}
+.img-container{
+  display: inline-block;
+  vertical-align: top;
+  width:180px;
+}
+.carousel-info{
+  display: inline-block;
+  vertical-align: top;
+  width:400px;
+  height: 200px;
+  color: white;
+}
+.slide-container{
+  width:600px;
+  background-color: #37474F;
 }
 /*--------------------------REGISTER---------------------------*/
 .register-box{

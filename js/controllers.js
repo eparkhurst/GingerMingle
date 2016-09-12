@@ -2,16 +2,24 @@ app.controller('HomeController', function($scope){
   $scope.myInterval = 3000;
     $scope.slides = [
       {
-        image: 'http://www.peency.com/images/2015/06/04/red-hair-girl.jpg'
+        image: 'http://www.peency.com/images/2015/06/04/red-hair-girl.jpg',
+        comment:"I love Ginger Mingle",
+        user:"Hot Girl"
       },
       {
-        image: 'https://scdailymakeover.files.wordpress.com/2012/12/emma_stone_red.jpg'
+        image: 'https://scdailymakeover.files.wordpress.com/2012/12/emma_stone_red.jpg',
+        comment:"Ginger Mingle is the best place to meet fellow gingers like me",
+        user:"Emma Stone"
       },
       {
-        image: 'https://upload.wikimedia.org/wikipedia/commons/8/8a/CarrotTop.jpg'
+        image: 'https://upload.wikimedia.org/wikipedia/commons/8/8a/CarrotTop.jpg',
+        comment:"At Ginger Mingle, I'm not just 'Carrot Top', I'm Scott",
+        user:"Scott Thompson"
       },
       {
-        image: 'public/images/eliPic.JPG'
+        image: 'public/images/eliPic.JPG',
+        comment:"I'm not just the founder of Ginger Mingle, I'm a user too!",
+        user:"Eli"
       }
     ];
 })

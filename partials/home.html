@@ -12,9 +12,14 @@
       <div>
         <carousel interval="myInterval">
           <slide ng-repeat="slide in slides" active="slide.active">
-            <img class="slide-img" ng-src="{{slide.image}}">
-            <div class="carousel-caption">
-              <h4>Slide {{$index+1}}</h4>
+            <div class="slide-container">
+              <div class="img-container">
+                <img class="slide-img" ng-src="{{slide.image}}">
+              </div>
+              <div class="carousel-info">
+                <h3>{{slide.comment}}</h3>
+                <h5>{{slide.user}}</h5>
+              </div>
             </div>
           </slide>
         </carousel>
