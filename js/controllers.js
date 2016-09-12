@@ -69,6 +69,8 @@ app.controller('LogInController', function($scope, $http, Authorization,Members)
     .then(function(data){
       if(data.data.data.token){
         sessionStorage.setItem('token', data.data.data.token)
+        sessionStorage.setItem('lat', data.data.data.user.address.geo.lat)
+        sessionStorage.setItem('long', data.data.data.user.address.geo.lng)
         Members.currentMember = data.data.data
         Authorization.go('members')
       }
@@ -104,8 +106,8 @@ app.controller('MembersController', function($scope, Authorization, Members){
 function calcDistance(members, currentMember){
   for (var i = 0; i < members.length; i++) {
     if(members[i].address.geo){
-      var latDiff = Number(members[i].address.geo.lat) - Number(currentMember.address.geo.lat)
-      var lngDiff = Number(members[i].address.geo.lng) - Number(currentMember.address.geo.lng)
+      var latDiff = Number(members[i].address.geo.lat) - Number(sessionStorage.lat)
+      var lngDiff = Number(members[i].address.geo.lng) - Number(sessionStorage.long)
       var distance = Math.sqrt((latDiff*latDiff)+(lngDiff+lngDiff))
       members[i].distance = distance
     }else{
