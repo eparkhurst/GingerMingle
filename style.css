@@ -155,8 +155,7 @@ main{
   margin-top: 2vh;
 }
 .member-img{
-  width:200px;
-  height: 200px;
+  margin:10px;
 }
 .info-box{
   width: 40vw;
@@ -183,4 +182,8 @@ main{
   width: 100%;
   position: absolute;
   bottom: 10px;
+}
+.heart{
+  height: 50px;
+  cursor: pointer;
 }

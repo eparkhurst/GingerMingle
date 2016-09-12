@@ -103,6 +103,9 @@ app.controller('MembersController', function($scope, Authorization, Members){
     Authorization.clear()
     console.log("all clear");
   }
+  $scope.like = function(member){
+    
+  }
 
 })
 
