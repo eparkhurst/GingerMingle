@@ -1,28 +1,7 @@
 <main-nav></main-nav>
-<div class="left-side">
-  <div class="top-search">
-    <div ng-click="toOrder=''"class="searchItem">
-      <h5>All</h5>
-    </div>
-    <div ng-click="toOrder='_matches.length'"class="searchItem">
-      <h5>Popular</h5>
-    </div>
-    <div ng-click="toOrder = 'distance'"class="searchItem">
-      <h5>Near Me</h5>
-    </div>
-    <div class="searchItem">
-      <h5>My Matches</h5>
-    </div>
-    <div class="searchItem">
-      <h5>Chatting</h5>
-    </div>
-  </div>
-  <div ng-repeat="member in members|limitTo:50 | orderBy:toOrder" class="members-list media">
-    <div class="media-left">
-      <img class="media-object member-img" ng-src="{{member.avatar}}" src="public/images/user1.svg" alt="picture of member" />
-    </div>
-    <div class="media-body">
-      <h3>{{member.names.firstName}}  {{member.names.lastName}}</h3>
-    </div>
+<member-side></member-side>
+<div class="right-side">
+  <div class="modal">
+
   </div>
 </div>

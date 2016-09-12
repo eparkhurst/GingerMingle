@@ -16,3 +16,9 @@ app.directive('mainNav',function(){
     templateUrl: 'partials/mainNav.html'
   };
 })
+app.directive('memberSide',function(){
+  return {
+    restrict: 'E',
+    templateUrl: 'partials/memberSide.html'
+  };
+})
