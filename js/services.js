@@ -31,7 +31,13 @@ app.factory('Members', function($http){
       },function error(data){
       })
     },
+    match:function(id,match_id){
+      return $http.post('http://galvanize-student-apis.herokuapp.com/gdating/members/'+id+'/matches',{_match:match_id}).then(function(data){
+        console.log(data);
+        return data
+      },function error(data){
+      })
+    },
     allMembers:[],
-    currentMember:{}
   }
 })

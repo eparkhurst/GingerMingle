@@ -1,12 +1,12 @@
 body{
-  background-color: #607D8B;
+  background-color: #6D3C1C;
   margin: 0;
   font-family: sans-serif;
 }
 header, footer{
   width:100vw;
   background-color: black;
-  color: white;
+  color: #956654;
 }
 header{
   padding: 3vh 0;
@@ -18,6 +18,7 @@ footer{
   position: fixed;
   left:0px;
   bottom:0px;
+  text-align: center;
 }
 
 .login-nav{
@@ -26,7 +27,7 @@ footer{
   justify-content: space-between;
 }
 .login-nav a{
-  color: white;
+  color: #956654;
   text-decoration: none;
 }
 .nav-button{
@@ -36,7 +37,7 @@ footer{
   margin-right: 50px;
 }
 .register{
-  border-left: 2px solid white;
+  border-left: 2px solid #956654;
   padding-left: 3px;
 }
 .get-started{
@@ -65,7 +66,7 @@ main{
   text-align: center;
 }
 .land-btn{
-  background-color: #37474F;
+  background-color: #3d2210;
 }
 .lower{
   display: flex;
@@ -97,34 +98,104 @@ main{
   vertical-align: top;
   width:400px;
   height: 200px;
-  color: white;
+  color:#956654;
 }
 .slide-container{
   width:600px;
-  background-color: #37474F;
+  background-color: black;
+}
+.carousel-control.right , .carousel-control.left{
+  background-color: #6D3C1C;
+  background-image: none;
+}
+.carousel-indicators .active{
+  background-color: #956654;
+}
+.carousel-indicators li{
+  border-color: #956654;
+}
+.carousel-item{
+  transition: 5s ease-in-out left;
 }
 /*--------------------------REGISTER---------------------------*/
-.register-box{
-  padding:10px;
-  width: 50vw;
-  background-color: #ECEFF1;
-  margin: auto;
-  margin-top: 10vh;
-  text-align: center;
+.back-ground-img{
+  position: relative;
+  height: 100vh;
 }
-
+.outer{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+}
+.middle{
+  display: flex;
+  flex-grow: 2;
+  height: 100%;
+  box-shadow:inset -20px 0px 100px #65381a;
+  background: linear-gradient(to right, #956654, #6D3C1C);
+}
+.right{
+  float:right;
+  margin-right: -100px;
+}
+.left{
+  float:left;
+  margin-left: -100px;
+  box-shadow:inset -20px 0px 50px #6D3C1C;
+}
+.out-reg{
+  position: absolute;
+  left:50%;
+}
+.login-box{
+  position: relative;
+  top:150px;
+  left:-50%;
+  width: 400px;
+  height: 300px;
+  background-color: black;
+  color:#956654;
+  text-align: center;
+  padding: 15px;
+}
+.register-box{
+  position: relative;
+  top:50px;
+  left:-50%;
+  width: 500px;
+  height: 700px;
+  background-color: black;
+  color:#956654;
+  text-align: center;
+  padding: 15px;
+}
+.thin-form{
+  margin-top: 15px;
+}
+.dob{
+  width:200px;
+  margin: auto;
+}
 .register-box h1{
   font-size: 2.5em;
 }
 .btn-login{
+  background-color: #956654;
+  color: #404040;
   margin-top: 10px;
+}
+.btn-login:hover{
+  color: white;
 }
 /*-------------------Members----------------------------*/
 .left-side{
   display: inline-block;
   vertical-align: top;
   background-color: grey;
-  width:40vw;
+  width:430px;
   overflow: scroll;
 }
 .right-side{
@@ -158,8 +229,8 @@ main{
   margin:10px;
 }
 .info-box{
-  width: 40vw;
-  height: 40vw;
+  width: 450px;
+  height: 450px;
   background-color: #CFD8DC;
   margin:auto;
   margin-top: 10vh;

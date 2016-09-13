@@ -18,7 +18,7 @@ app.controller('HomeController', function($scope){
       },
       {
         image: 'public/images/eliPic.JPG',
-        comment:"I'm not just the founder of Ginger Mingle, I'm a user too!",
+        comment:"I'm not just the founder of Ginger Mingle, I'm also a member!",
         user:"Eli"
       }
     ];
@@ -50,7 +50,8 @@ app.controller('SignUpController', function($scope, Authorization, Members){
 
       if(data.data.data.token){
         sessionStorage.setItem('token', data.data.data.token)
-        Members.currentMember = data.data.data
+        sessionStorage.setItem('user', JSON.stringify(data.data.data.user))
+
         Authorization.go('members')
       }
       console.log("What did we get back?");
@@ -70,7 +71,6 @@ app.controller('LogInController', function($scope, $http, Authorization,Members)
       if(data.data.data.token){
         sessionStorage.setItem('token', data.data.data.token)
         sessionStorage.setItem('user', JSON.stringify(data.data.data.user))
-        Members.currentMember = data.data.data
         Authorization.go('members')
       }
     })
@@ -79,8 +79,13 @@ app.controller('LogInController', function($scope, $http, Authorization,Members)
 
 
 app.controller('MembersController', function($scope, Authorization, Members){
+  var user = JSON.parse(sessionStorage.user)
+  console.log(user);
   $scope.modal = false;
   $scope.filterMatches = false;
+  $scope.member = {}
+
+
   $scope.showMe = function(member){
     $scope.modal = true;
     $scope.member = member;
@@ -90,25 +95,30 @@ app.controller('MembersController', function($scope, Authorization, Members){
     Members.getMembers().then(function(data){
       Members.allMembers = data.data.data
       $scope.members = Members.allMembers
-      console.log("current member", Members.currentMember);
-      calcDistance(Members.allMembers, Members.currentMember.user)
+      calcDistance(Members.allMembers)
     })
   }else{
-    console.log("current member",Members.currentMember.user);
     $scope.members = Members.allMembers
-    calcDistance(Members.allMembers, Members.currentMember.user)
+    calcDistance(Members.allMembers)
   }
   $scope.logout = function(){
     sessionStorage.clear()
     Authorization.clear()
     console.log("all clear");
   }
-  $scope.like = function(member){
 
+  $scope.like = function(member){
+    Members.match(user._id, member._id)
+    user.matches.push(member._id)
+    sessionStorage.setItem('user', JSON.stringify(user))
+
+  }
+  $scope.checkMatch= function(member){
+    return checkMatchInt(user._matches, member._id)
   }
   $scope.matchFilter = function(val){
     if($scope.filterMatches){
-      var matches = JSON.parse(sessionStorage.user)._matches
+      var matches = user._matches
       for (var i = 0; i < matches.length; i++) {
         if(matches[i] == val._id){
           return val
@@ -121,8 +131,16 @@ app.controller('MembersController', function($scope, Authorization, Members){
 
 })
 
+function checkMatchInt(userMatches, memberId){
+  if(userMatches.includes(memberId)){
+    return true
+  }else{
+    return false
+  }
 
-function calcDistance(members, currentMember){
+}
+
+function calcDistance(members){
   for (var i = 0; i < members.length; i++) {
     if(members[i].address.geo){
       var user= JSON.parse(sessionStorage.user)

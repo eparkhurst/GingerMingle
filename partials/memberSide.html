@@ -17,7 +17,7 @@
     </div>
   </div>
   <div class="members-list">
-    <div ng-click="showMe(member)" ng-repeat="member in members | filter:matchFilter |limitTo:50 | orderBy:toOrder " class="media">
+    <div ng-click="showMe(member)" ng-repeat="member in members | filter:matchFilter | orderBy:toOrder |limitTo:50" class="media">
       <div class="media-left">
         <img class="member-img" ng-src="{{member.avatar}}" src="public/images/user1.svg" alt="picture of member" />
       </div>

@@ -1,11 +1,18 @@
 <landing-nav></landing-nav>
-<div class="register-box">
-  <h1>Login</h1>
-  <form class="form-inline" ng-model="loginForm" >
-    <label for="email">email</label>
-    <input class="form-control" ng-model="loginForm.email" type="email" name="userName" value="">
-    <label for="password">password</label>
-    <input class="form-control" ng-model="loginForm.password" type="password" name="password" value="">
-  </form>
-  <input class="btn btn-login" type="button" ng-click="login()" value="Log In">
+<div class="outer">
+  <img class="back-ground-img left" src="public/images/eliUpright-minC2.JPG" alt="" />
+  <div class="middle"></div>
+  <img class="back-ground-img right" src="public/images/kateMara.jpg" alt="" />
+  <div class="out-reg">
+    <div class="login-box">
+      <h1>Login</h1>
+      <form class="form-horizontal" ng-model="loginForm" >
+        <label for="email">email</label>
+        <input class="form-control" ng-model="loginForm.email" type="email" name="userName" value="">
+        <label for="password">password</label>
+        <input class="form-control" ng-model="loginForm.password" type="password" name="password" value="">
+      </form>
+      <input class="btn btn-login" type="button" ng-click="login()" value="Log In">
+    </div>
+  </div>
 </div>

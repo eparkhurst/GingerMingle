@@ -1,37 +1,47 @@
 <landing-nav></landing-nav>
 <h3 ng-show="showLoading">Loading...</h3>
-<div class="register-box">
-  <h1>Register</h1>
-  <form ng-model="signUpForm">
-    <div class="form-group">
-      <label for="userName">username</label>
-      <input class="form-control" ng-model="signUpForm.username" type="text" name="userName" value="">
-    </div>
-    <div class="form-group">
-      <label for="password">password</label>
-      <input class="form-control" ng-model="signUpForm.password" type="password" name="password" value="">
-    </div>
-    <div class="form-group">
-      <label for="email">email</label>
-      <input class="form-control" ng-model="signUpForm.email" type="email" name="email" value="">
-    </div>
-    <div class="form-inline">
-      <label for="firstname">First Name</label>
-      <input class="form-control" ng-model="signUpForm.names.firstName" type="text" name="firstname" value="">
-      <label for="lastname">Last Name</label>
-      <input class="form-control" ng-model="signUpForm.names.lastName" type="text" name="lastname" value="">
-    </div>
-    <br>
-    <div class="form-group">
-      <label for="dob">date of birth</label>
-      <input class="form-control" ng-model="signUpForm.dob" type="date" name="dob" value="">
-    </div>
-    <div class="form-group">
-      <label for="gender">Gender</label>
-      <input ng-model="signUpForm.gender" type="radio" name="gender" value="0">male
-      <input ng-model="signUpForm.gender" type="radio" name="gender" value="1">female
-    </div>
 
-    <input class="btn " type="button" ng-click="submitSignUp()" name="submit" value="Create An Account">
-  </form>
+<div class="outer">
+  <img class="back-ground-img left" src="public/images/eliUpright-minC2.JPG" alt="" />
+  <div class="middle"></div>
+  <img class="back-ground-img right" src="public/images/kateMara.jpg" alt="" />
+  <div class="out-reg">
+    <div class="register-box">
+      <h1>Register</h1>
+      <form ng-model="signUpForm">
+        <div class="form-group">
+          <label for="userName">username</label>
+          <input class="form-control" ng-model="signUpForm.username" type="text" name="userName" value="">
+        </div>
+        <div class="form-group">
+          <label for="password">password</label>
+          <input class="form-control" ng-model="signUpForm.password" type="password" name="password" value="">
+        </div>
+        <div class="form-group">
+          <label for="email">email</label>
+          <input class="form-control" ng-model="signUpForm.email" type="email" name="email" value="">
+        </div>
+        <div class="form-inline thin-form">
+          <label for="firstname">First Name</label>
+          <input class="form-control" ng-model="signUpForm.names.firstName" type="text" name="firstname" value="">
+        </div>
+        <div class="form-inline thin-form">
+          <label for="lastname">Last Name</label>
+          <input class="form-control" ng-model="signUpForm.names.lastName" type="text" name="lastname" value="">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="dob">date of birth</label>
+          <input class="form-control dob" ng-model="signUpForm.dob" type="date" name="dob" value="">
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <input ng-model="signUpForm.gender" type="radio" name="gender" value="0">male
+          <input ng-model="signUpForm.gender" type="radio" name="gender" value="1">female
+        </div>
+
+        <input class="btn " type="button" ng-click="submitSignUp()" name="submit" value="Create An Account">
+      </form>
+    </div>
+  </div>
 </div>
