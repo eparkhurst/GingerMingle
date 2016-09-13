@@ -1,24 +1,26 @@
 <main-nav></main-nav>
-<member-side></member-side>
-<div class="right-side" ng-show="modal">
-  <div class="info-box">
-    <div class="top">
-      <img class="littleImg" src="{{member.avatar}}" alt="" />
-      <h3>{{member.username}}</h3>
-      <h4>{{member.names.firstName}}  {{member.names.lastName}}</h4>
-      <h5>Age: {{member.dob | age}}</h5>
-      <p>
-        {{member.username}} is {{(member.distance * 69).toFixed(2)}} miles away
-      </p>
-      <img ng-show="checkMatch(member)" class="heart"  src="public/images/heart.ico" alt="heart" />
-      <button ng-show="!checkMatch(member)" ng-click="like(member)" class="btn" type="button" name="button">Match me</button>
-    </div>
-    <div class="chat">
-      <h5>You do not have any messages with {{member.username}}</h5>
-      <form class="form-inline messenger" action="index.html" method="post">
-        <input type="text" class="form-control">
-        <button type="submit" name="button" class="btn">Send</button>
-      </form>
+<div class="container">
+  <member-side></member-side>
+  <div class="right-side" >
+    <div class="info-box" ng-show="modal">
+      <div class="top">
+        <img class="littleImg" src="{{member.avatar}}" alt="" />
+        <h3>{{member.username}}</h3>
+        <h4>{{member.names.firstName}}  {{member.names.lastName}}</h4>
+        <h5>Age: {{member.dob | age}}</h5>
+        <p>
+          {{member.username}} is {{(member.distance * 69).toFixed(2)}} miles away
+        </p>
+        <img ng-show="checkMatch(member)" class="heart"  src="public/images/heart.ico" alt="heart" />
+        <button ng-show="!checkMatch(member)" ng-click="like(member)" class="btn" type="button" name="button">Match me</button>
+      </div>
+      <div class="chat">
+        <h5>You do not have any messages with {{member.username}}</h5>
+        <form class="form-inline messenger" action="index.html" method="post">
+          <input type="text" class="form-control">
+          <button type="submit" name="button" class="btn">Send</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>

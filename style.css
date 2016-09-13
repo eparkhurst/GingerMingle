@@ -192,17 +192,20 @@ main{
 }
 /*-------------------Members----------------------------*/
 .left-side{
-  display: inline-block;
-  vertical-align: top;
-  background-color: grey;
+  float: left;
+  background-color: #6D3C1C;
   width:430px;
   overflow: scroll;
 }
+.member-panel{
+  background-color: black;
+  color:#956654;
+}
 .right-side{
-  display: inline-block;
-  vertical-align: top;
-  width:59vw;
-  height:87vh;
+  width:100%;
+  height: 89vh;
+  background-image: url('http://www.spyderonlines.com/images/wallpapers/fall-leaves-wallpaper/fall-leaves-wallpaper-16.jpg');
+  background-size: cover;
 }
 .top-search{
   display: flex;
@@ -213,8 +216,11 @@ main{
   text-align: center;
   border-left: 1px solid black;
   padding: 2px;
-  color: blue;
+  color: black;
   cursor: pointer;
+}
+.all{
+  border: none;
 }
 .searchItem h5{
   margin: 20px 0;
@@ -224,6 +230,7 @@ main{
   width:100%;
   overflow: scroll;
   margin-top: 2vh;
+  padding: 0 10px;
 }
 .member-img{
   margin:10px;
@@ -233,7 +240,6 @@ main{
   height: 450px;
   background-color: #CFD8DC;
   margin:auto;
-  margin-top: 10vh;
 }
 .top{
   height: 60%;
@@ -257,4 +263,12 @@ main{
 .heart{
   height: 50px;
   cursor: pointer;
+}
+.container{
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }

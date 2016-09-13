@@ -1,6 +1,6 @@
 <div class="left-side">
   <div class="top-search">
-    <div ng-click="toOrder=''"class="searchItem">
+    <div ng-click="toOrder=''"class="searchItem all">
       <h5>All</h5>
     </div>
     <div ng-click="toOrder='_matches.length'"class="searchItem">
@@ -17,7 +17,7 @@
     </div>
   </div>
   <div class="members-list">
-    <div ng-click="showMe(member)" ng-repeat="member in members | filter:matchFilter | orderBy:toOrder |limitTo:50" class="media">
+    <div ng-click="showMe(member)" ng-repeat="member in members | filter:matchFilter | orderBy:toOrder |limitTo:50" class="media member-panel">
       <div class="media-left">
         <img class="member-img" ng-src="{{member.avatar}}" src="public/images/user1.svg" alt="picture of member" />
       </div>
