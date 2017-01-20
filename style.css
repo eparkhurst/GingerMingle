@@ -120,7 +120,7 @@ main{
 /*--------------------------REGISTER---------------------------*/
 .back-ground-img{
   position: relative;
-  height: 100vh;
+  height: 95vh;
 }
 .outer{
   position: relative;
@@ -128,7 +128,7 @@ main{
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  height: 100vh;
+  height: 95vh;
 }
 .middle{
   display: flex;
@@ -166,7 +166,7 @@ main{
   top:50px;
   left:-50%;
   width: 500px;
-  height: 700px;
+  height: 650px;
   background-color: black;
   color:#956654;
   text-align: center;
